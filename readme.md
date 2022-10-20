@@ -10,3 +10,9 @@ The deployed link is (https://venerable-fox-993dde.netlify.app/).
 - Hard coded values in right pane of home screen.
 - Hard coded the category and the type of expense to database.
 - Didn't Create the doughnut chart
+
+
+#### Improved
+
+The deployed link is (https://expense-tracker-d752ab.netlify.app/).
+- removed Hard coded category and the type of expense to database.
