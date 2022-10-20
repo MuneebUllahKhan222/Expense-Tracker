@@ -146,30 +146,30 @@ class UiController {
         <div>
             <h5 class="mb-3">Select Category</h5>
             <div id="main-category">
-                <div>
-                    <button type="button" class="btn btn-outline active avatar me-5" data-bs-toggle="button" autocomplete="off"></button>
-                    <p>home</p>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-outline active avatar me-5" data-bs-toggle="button" autocomplete="off"></button>
-                    <p>Shopping</p>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-outline active avatar me-5" data-bs-toggle="button" autocomplete="off"></button>
-                    <p>Gifts</p>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-outline active avatar me-5" data-bs-toggle="button" autocomplete="off"></button>
-                    <p>Mobile</p>  
-                </div>
-                <div>
-                    <button type="button" class="btn btn-outline active avatar me-5" data-bs-toggle="button" autocomplete="off"></button>
-                    <p>Family</p>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-outline active avatar me-5" data-bs-toggle="button" autocomplete="off"></button>
-                    <p>other</p>
-                </div>                            
+            <div class="formik me-3">
+            <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios1" value="Home">
+            <p>Home</p>
+          </div>
+          <div class="formik ms-2 me-2">
+            <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios1" value="Shopping">
+            <p>Shopping</p>
+          </div>
+          <div class="formik ms-2 me-2">
+            <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios1" value="Gifts">
+            <p>Gifts</p>
+          </div>
+          <div class="formik ms-2 me-2">
+            <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios1" value="Mobile">
+            <p>Mobile</p>
+          </div>
+          <div class="formik ms-2 me-2">
+            <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios1" value="Family">
+            <p>Family</p>
+          </div>
+          <div class="formik ms-2 me-2">
+            <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios1" value="Others">
+            <p>Others</p>
+          </div>       
             </div>
             <button class="btn btn-outline-primary shadow mt-2" id="add">Add</button>
         </div> 
@@ -237,9 +237,11 @@ class UiController {
         </div>
 
 
-        <div class="p-4">
-            <h5>Overview</h5>
+        <div class="p-4" id='overview' hidden>
+            Home
         </div>
+
+        <div class="p-4" id='type' hidden>Expense</div>
         `;
 
 
@@ -274,12 +276,29 @@ class UiController {
     
     }
 
+    radioButton() {
+        let radioVal ='';
+    
+        const radios = document.querySelectorAll('input[name="exampleRadios"]');
+        radios.forEach(radio => {
+        radio.addEventListener('click', function () {
+            radioVal = radio.value;
+            console.log(radioVal);  
+            document.querySelector('#overview').textContent = radioVal      
+        });
+        
+        return radioVal
+        });
+    }
 
     getExpenseInfo() {
+
+        
         const amount = document.querySelector('#amount').value;
         const from = document.querySelector('#from').value;
-        const type = 'income';
-        const category = 'Shopping';
+        const type = document.querySelector('#type').textContent;
+        const category = document.querySelector('#overview').textContent;
+        console.log(type)
 
         const expense = {
             amount,
@@ -295,7 +314,7 @@ class UiController {
         let output='';
 
         data.forEach(data1 => {
-            if(data1.type === 'expense') {
+            if(data1.type.length == 9) {
                 output += `
                 <tr>
                     <td><strong>${data1.category}</strong></td>
