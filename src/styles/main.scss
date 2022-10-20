@@ -1,0 +1,472 @@
+* {
+  margin: 0;
+}
+
+.container-fluid{
+  background-color: white;
+  padding: 0;
+}
+
+/* ------SIGN IN/UP----- */
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  background-color: rgb(83, 83, 248);
+}
+
+
+#left-sign {
+  background-color: rgb(83, 83, 248);
+  width: 40vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#right-sign {
+  background-color: white;
+  width: 70vw;
+  height: 100vh;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+
+.sign-in{
+  color: white;
+  width: 200px;
+  height: 200px;
+}
+
+.sign-up{
+  color: white;
+  width: 200px;
+  height: 200px;
+}
+
+.sign-in h1 {
+  letter-spacing: 4px;
+}
+
+.sign-up h1 {
+  letter-spacing: 4px;
+}
+
+
+/* Sign in/up right pane */
+#main-sign{
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#main-sign h1{
+  color: rgb(83, 83, 248);
+}
+
+.form-div, label{
+  color: darkgrey;
+}
+.form-div{
+  width: 35vw;
+}
+
+.form-div input{
+  background-color: rgb(240, 240, 240);
+  /* width: 100%; */
+}
+
+#main-sign button{
+  background-color: rgb(83, 83, 248);
+  color: white;
+  border-radius: 30px;
+  width: 30%;
+  /* height: 50px; */
+  font-size: large;
+  letter-spacing: 1px;
+  padding: 13px;
+}
+
+#main-sign p{
+  color: black;
+  font-size: small;
+  display: inline;
+}
+
+#main-sign a{
+  color: rgb(113, 113, 247);
+  display: inline;
+  cursor: pointer;
+}
+
+/* could add hover on signup here */
+
+
+
+
+//  Home page css
+
+
+#home {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+  width: auto;
+}
+
+#home-left{
+  width: 70vw;
+  background-color: white;
+}
+
+
+#home-right{
+  width: 40vw;
+}
+
+#home-left-flex{
+  margin-left: 10%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+// removing input field buttons
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+// For transaction
+
+#amount {
+  border: none;
+  width: 40%;
+}
+
+#amount :focus{
+  border: none;
+  outline: none;
+}
+
+.input-container {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-select {
+  border: none;
+  width: 45%;
+}
+
+#add-transaction{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  width: auto;
+}
+
+#expense {
+  height: 70px;
+  background-color: #fafafa;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+#income {
+  height: 70px;
+  background-color: #fafafa;
+}
+
+#add-transaction i{
+  color: #474747;
+}
+
+
+
+// Select category
+
+#main-category{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+#main-category div{
+  display: flex;
+  flex-direction: column;
+}
+
+#main-category p{
+  font-size: small;
+  font-weight: 600;
+}
+
+
+#add {
+  border: none;
+  width: 20%;
+  height: 65px;
+}
+
+
+// Table
+.plus {
+  color: green;
+}
+
+.minus{
+  color: red;
+}
+
+.bank {
+  color: #717171;
+  font-weight: 500;
+}
+
+.data {
+  color: #717171;
+  font-weight: 500;
+}
+
+// -------------Right pane---------
+
+#home-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#home-right-flex {
+  background-color: #f8f8f8;
+  width: 68%;
+  height: max-content;
+  border-radius: 15px;
+  width: max-content;
+}
+
+#avatar-icon{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#balance{
+  color: #4c84b8;
+}
+
+// type
+
+#type-account{
+  display: flex;
+  justify-content: space-between;
+}
+
+.type{
+  font-weight: 600;
+}
+
+.type span{
+  color: #4c84b8;
+}
+
+
+// data
+
+#inner-data{
+  background-color: #efefef;
+  // height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: space-between;
+  
+}
+
+#add-more {
+  color: #4c84b8;
+}
+
+.inner-data2{
+  background-color: #efefef;
+  // height: 50px;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.inner-data2 p{
+  font-weight: 700;
+}
+
+.col-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+
+
+
+// modal
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.is-invalid {
+  color: red;
+}
+
+#helper p{
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 950px) {
+  .input-container {
+    width: 90%;
+  }
+  #expense {
+    margin-left: 0;
+    margin-bottom: 5%;
+  }
+  #add {
+    width: 40%;
+  }
+  #main-sign button{
+    background-color: rgb(83, 83, 248);
+    color: white;
+    border-radius: 30px;
+    width: 50%;
+    /* height: 50px; */
+    font-size: large;
+    letter-spacing: 1px;
+    padding: 13px;
+  }
+  #inner-data{
+    background-color: #efefef;
+    // height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: space-between;
+    flex-wrap: wrap;
+  }
+  #data{
+    width: max-content;
+  }
+}
+
+
+
+
+
+
+
