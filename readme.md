@@ -1,8 +1,12 @@
 
-## Demo App
+## Expense Tracker
 
-The demo app is a very simple Joke generator. Replace with your own code and install other packages as needed
+The deployed link is (https://venerable-fox-993dde.netlify.app/).
 
-- index.js (main javascript)
-- template.html (template)
-- styles/main.scss (styles)
+
+#### Limitations
+
+- Didn't create the 4th screen (modal screen).
+- Hard coded values in right pane of home screen.
+- Hard coded the category and the type of expense to database.
+- Didn't Create the doughnut chart
