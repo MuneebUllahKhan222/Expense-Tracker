@@ -19,7 +19,6 @@ class Dbcontroller{
         let currentDate = `${day}-${month}-${year}`;
         
         let random = (Math.floor(Math.random() * 10000)).toString()
-
         db
             .collection('users')
             .doc(uid)
