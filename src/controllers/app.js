@@ -26,35 +26,56 @@ document.addEventListener('DOMContentLoaded', initializer);
 
     function homeListeners(){
         document.querySelector('#add').addEventListener('click', addExpense)
-            document.querySelector('#logout').addEventListener('click', signOut)
+        document.querySelector('#logout').addEventListener('click', signOut)
+        document.querySelector('#expense').addEventListener('click', typeExpense)
+        document.querySelector('#income').addEventListener('click', typeIncome)
     }
 
 
+// function radioButton() {
+//     let radioVal ='Others';
+
+//     const radios = document.querySelectorAll('input[name="exampleRadios"]');
+//     radios.forEach(radio => {
+//     radio.addEventListener('click', function () {
+//         radioVal = radio.value;
+//         console.log(radioVal);
+//         return radioVal
+//     });
+
+//     });
+// }
+
 
 let uid;
+let category;
 
 function getExpense() {
     database.getDoc(uid);
 }
 
 
+
+
 function initializer(e){
     e.preventDefault();
-    // ui.signUp(false);
     
     auth.onAuthStateChanged(authUser => {
         if (authUser) {
-            uid = authUser.uid;
+            uid = authUser.uid;     
             ui.home();
             homeListeners();
             localStorage.setItem('user', authUser.email);
             getExpense();
+            category= ui.radioButton();
+            console.log(category)
         } else {
             ui.signUp(false);
             loadSignInListeners();
         }
     })
 }
+
 
 
 
@@ -96,6 +117,7 @@ function signOut(e) {
 function addExpense(e) {
     e.preventDefault()
     const expense = ui.getExpenseInfo();
+    console.log(expense.type.length)
     if (expense.amount !== '') {
         database.saveDoc(uid, expense.amount, expense.category, expense.from, expense.type)
     }
@@ -103,6 +125,18 @@ function addExpense(e) {
     getExpense(uid);
 }
 
+function typeExpense(e){
+    e.preventDefault();
+    const abc = document.querySelector('#expense').textContent
+    document.querySelector('#type').textContent = abc;
+}
+
+function typeIncome(e){
+    e.preventDefault();
+    const abc = document.querySelector('#income').textContent
+    console.log(abc)
+    document.querySelector('#type').textContent = abc;
+}
 
 
 //validations
@@ -135,57 +169,4 @@ function validateSignUpPassword(e) {
             helper[0].hidden = true;
         }       
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const openModalButtons = document.querySelectorAll('[data-modal-target]')
-// const closeModalButtons = document.querySelectorAll('[data-close-button]')
-// const overlay = document.getElementById('overlay')
-
-// openModalButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     const modal = document.querySelector(button.dataset.modalTarget)
-//     openModal(modal)
-//   })
-// })
-
-// overlay.addEventListener('click', () => {
-//   const modals = document.querySelectorAll('.modal.active')
-//   modals.forEach(modal => {
-//     closeModal(modal)
-//   })
-// })
-
-// closeModalButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     const modal = button.closest('.modal')
-//     closeModal(modal)
-//   })
-// })
-
-// function openModal(modal) {
-//   if (modal == null) return
-//   modal.classList.add('active')
-//   overlay.classList.add('active')
-// }
-
-// function closeModal(modal) {
-//   if (modal == null) return
-//   modal.classList.remove('active')
-//   overlay.classList.remove('active')
-// }
